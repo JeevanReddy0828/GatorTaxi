@@ -1,11 +1,10 @@
 CC = g++
- 
-# executables
-gatorTaxi: gatorTaxi.cpp MyRBT.h MyHeap.h
-	$(CC) MyHeap.h
-	$(CC) MyRBT.h
-	$(CC) gatorTaxi.cpp -o gatorTaxi
+CFLAGS = -std=c++17 -O2 -Wall -Wextra
 
+TARGET = gatorTaxi
+
+$(TARGET): gatorTaxi.cpp
+	$(CC) $(CFLAGS) gatorTaxi.cpp -o $(TARGET)
 
 clean:
-	$(RM) $(TARGET)
+	rm -f $(TARGET)
